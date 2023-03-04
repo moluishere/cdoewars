@@ -8,10 +8,10 @@
 # unique_in_order([1,2,2,3,3])       == [1,2,3]
 
 def unique_in_order(iterable)
-  result = (iterable.is_a?(String) ? iterable.split('') : iterable)
+  items = (iterable.is_a?(String) ? iterable.split('') : iterable)
   unique = []
-  result.each_with_index do |item, index|
-    unique << item if index == 0 || item != result[index-1]
+  items.each_with_index do |item, index|
+    unique << item if index == 0 || item != items[index-1]
   end
   unique
 end
